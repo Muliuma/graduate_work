@@ -1,0 +1,15 @@
+1、创建任务
+portBASE_TYPE xTaskCreate(pdTASK_CODE   pvTaskCode,const signed portCHAR *  const pcName,unsigned portSHORT    usStackDepth,void *   pvparameters.unsigned portBASE_TYPE    uxPriority,xTaskHandle *   pxCreatedTask);
+
+函数参数描述：
+pvTaskCode：是一个指向任务的实现函数的指针。
+pcName：具有描述性的任务名。
+usStackDepth：用于告诉内核为它分配多大的栈空间，一般通过定义常量来决定空闲任务的栈空间大小。
+pvParameters：接受一个指向void 的指针(void *).pvParameters的值是传递到任务中的值。
+uxPriority：任务执行优先级
+pxCreatedTask：用于传出任务的句柄。
+返回值：1.pdTRUE创建成功。2.errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY
+内存堆空间创建不足
+
+2、启动调度器，任务开始执行
+vTaskStartScheduler();
